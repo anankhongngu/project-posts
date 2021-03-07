@@ -4,7 +4,7 @@ const Category = require("./../models/category");
 const router = express.Router();
 
 router.post("/category", async(req, res) => {
-    const { name, postID } = req.body;
+    const { name, post } = req.body;
 
     try {
         const foundCategory = await Category.findOne({ name });
@@ -15,7 +15,7 @@ router.post("/category", async(req, res) => {
         }
         const newCategory = new Category({
             name,
-            post: postID
+            post
         });
 
         const result = await newCategory.save();
