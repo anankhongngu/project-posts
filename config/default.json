@@ -1,0 +1,6 @@
+{
+    "dbUrl": "mongodb+srv://anan:Mongnghi27@cluster0.9onoz.mongodb.net/projectpost?retryWrites=true&w=majority",
+    "port": 3000,
+    "sgAPIKey": "",
+    "jwtSignature": "projectpost"
+}
