@@ -50,7 +50,7 @@ router.delete("/category", async(req, res) => {
 })
 
 router.post("/update-category", async(req, res) => {
-    const { _id, name, postID } = req.body;
+    const { _id, name, post } = req.body;
     try {
         const foundCategory = await Category.findById({ _id });
         if (!foundCategory) {
@@ -58,7 +58,7 @@ router.post("/update-category", async(req, res) => {
                 .status(404)
                 .send({ message: "Category doesn't existed!!" });
         }
-        await Category.updateOne({ _id }, { name: name, postID: postID })
+        await Category.updateOne({ _id }, { name: name, post })
         res.status(200)
             .send({ message: "Update successfully" });
     } catch (err) {
